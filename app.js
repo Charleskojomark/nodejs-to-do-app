@@ -15,6 +15,10 @@ mongoose.connect(process.env.MONGODB_URI)
     console.error("Failed to connect to DB",err);
 })
 
+
+
+app.use('/users', require('./routes/auth'));
+
 app.listen(PORT,()=>{
     console.log(`Server running on ${PORT}`);
 })
